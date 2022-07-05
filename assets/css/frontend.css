@@ -1,0 +1,9 @@
+#storeslots_order_delivery_times_field .woocommerce-input-wrapper .select2-container,
+#storeslots_order_pickup_times_field .woocommerce-input-wrapper .select2-container {
+    width: 100% !important;
+}
+
+.storeslots-order-delivery-dates span.woocommerce-input-wrapper input.input-text,
+.storeslots-order-pickup-dates span.woocommerce-input-wrapper input.input-text {
+    cursor: pointer;
+}

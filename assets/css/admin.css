@@ -1,0 +1,720 @@
+
+.toplevel_page_storeslots #adminmenu .wp-menu-image img {
+    opacity: 1;
+}
+
+.store_slots_main{
+    margin-left: -1.1%;
+}
+
+.storeslots_list_items {
+    margin: 30px 50px;
+    display: flex;
+    column-gap: 20px;
+    row-gap: 20px;
+    flex-wrap: wrap;
+}
+.storeslots_list_items .storeslots_item{
+    background: #FFFFFF;
+    border-radius: 9px;
+    padding: 7px 25px;
+    margin-right: 5px;
+    border: 1px solid #C1B4FA;
+}
+.storeslots_list_items .storeslots_item:nth-child(4) {
+    margin-right: 0px;
+}
+/*.storeslots_list_items .storeslots_item:last-child {*/
+/*    margin-right: 0;*/
+/*}*/
+.storeslots_list_items .storeslots_item h3{
+    font-size: 16px;
+    display: block;
+    margin: 0px 0px 15px 0px;
+}
+.storeslots_list_items .storeslots_item a{
+    text-decoration: none;
+    display: block;
+}
+.storeslots_list_items .storeslots_item label{
+    font-size: 19px;
+    display: inline;
+}
+.storeslots_list_items .storeslots_item label.toggle_switch {
+    position: relative;
+    display: inline-block;
+    width: 51px;
+    height: 25px;
+    margin-left: 0px;
+}
+.storeslots_list_items .storeslots_item label.toggle_switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.storeslots_list_items .storeslots_item label.toggle_switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.storeslots_list_items .storeslots_item label.toggle_switch .slider:before {
+    position: absolute;
+    content: "";
+    height: 17px;
+    width: 17px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.storeslots_list_items .storeslots_item label.toggle_switch input:checked + .slider {
+    background-color: #6E32C9;
+}
+.storeslots_list_items .storeslots_item label.toggle_switch input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+.storeslots_list_items .storeslots_item label.toggle_switch input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+.storeslots_list_items .storeslots_item label.toggle_switch .slider.round {
+    border-radius: 34px;
+}
+
+.storeslots_list_items .storeslots_item label.toggle_switch .slider.round:before {
+    border-radius: 50%;
+}
+.storeslots_list_items .storeslots_item .settings{
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    background: #F6F5FA;
+    padding: 5px 10px;
+    color: #6A638B;
+    margin-left: 10px;
+    font-size: 12px;
+    font-weight: 500;
+}
+.storeslots_list_items .storeslots_item .settings svg{
+    width: 14px;
+    height: 14px;
+    margin-right: 6px;
+}
+.storeslots_list_items .storeslots_item .settings svg rect{
+    fill: #A29DB7;
+}
+.storeslots_list_items .storeslots_item .settings.active{
+    color: #4A4463;
+    cursor: pointer;
+}
+.storeslots_list_items .storeslots_item .settings.active svg rect{
+    fill: #6E32C9;
+}
+
+
+
+#storeslots_dashboard .mt20 {
+    margin-top: 20px;
+}
+.storeslots_header{
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 50px;
+    flex-direction: row;
+    column-gap: 10px;
+    box-shadow: 0 13px 22px -5px rgb(0 0 0 / 6%);
+}
+.storeslots_left_header p{
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0px;
+    position: relative;
+}
+.storeslots_left_header p span{
+    position: absolute;
+    top: 0;
+    right: -60px;
+    background: #6E32C9;
+    padding: 0px 10px;
+    border-radius: 15px;
+    font-size: 14px;
+    color: #fff;
+    font-weight: normal;
+}
+.storeslots_right_header p{
+    font-size: 17px;
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+}
+.storeslots_header_title{
+    margin: 20px 53px 0px 53px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    align-content: center;
+    border-bottom: 1px solid #DDD8EE;
+}
+.storeslots_header_title h2{
+    font-size: 30px;
+    line-height: 35px;
+    margin: 25px 0;
+}
+
+
+.storeslots_header_title_left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+.storeslots_header_title_left h2 {
+    position: relative;
+}
+.storeslots_header_title_left h2:after {
+    position: absolute;
+    content: "";
+    background: #6E32C9;
+    top: auto;
+    bottom: -26px;
+    width: 100%;
+    height: 2px;
+    left: 0;
+}
+
+.documentation a {
+    margin-left: 100px;
+    color: #6E32C9;
+    margin-top: 15px;
+    display: block;
+}
+
+#store_slots_container {
+    padding: 50px 50px;
+}
+
+/***************************************************
+    InVOICE PDF STYLE
+**************************************************/
+
+#storeslots_dashboard .d-block{
+    display: block;
+}
+#storeslots_dashboard .select2-container--default .select2-selection--multiple .select2-selection__choice{
+    padding: 5px;
+    padding-left: 20px;
+}
+#storeslots_dashboard .select2-container--default .select2-selection--multiple .select2-selection__choice__remove{
+    top: 3px;
+}
+#storeslots_dashboard .select2-container--default .select2-selection--multiple,
+#storeslots_dashboard .storeslots_form_group .storeslots_select_control{
+    padding: 12px 20px;
+    /*margin-top: 20px;*/
+    border-radius: 8px;
+    width: 100%;
+    border: 1px solid #BDCEF1;
+    color:#5b5b5bf5 !important;
+    font-size: 15px !important;
+}
+
+#storeslots_dashboard .storeslots_form_group .ss_slot_text_control .storeslots_select_control{
+    width: 20%;
+}
+
+#storeslots_dashboard .storeslots_form_group option {
+    font-size: 15px;
+}
+
+/* Start Single module sticky bar */
+#storeslots_dashboard {
+    padding: 30px 0px;
+    border-radius: 10px;
+    padding-top: 10px;
+    position: relative;
+}
+#storeslots_dashboard .content_wrapper{
+    display: flex;
+    padding-top: 5px;
+}
+
+#storeslots_dashboard .tab_body_title{
+    border-bottom: 1px solid #E3E0ED;
+    padding-bottom: 15px;
+}
+#storeslots_dashboard .tab_body_title h1{
+    font-size: 28px;
+    color: #6E32C9;
+    font-weight: 700;
+}
+
+#storeslots_dashboard .tab_body_sub_title{
+    border-bottom: 1px solid #E3E0ED;
+    border-bottom-style: dashed;
+    padding: 15px 0;
+}
+
+#storeslots_dashboard .tab_body_sub_title h4{
+    font-size: 20px;
+    color: #6E32C9;
+    font-weight: 600;
+    margin: 0 0 5px 0;
+}
+
+#storeslots_dashboard .storeslots_form_group .label_btn {
+
+}
+
+#storeslots_dashboard  .storeslots_form_group .label_btn .label_btn_upload{
+    padding: 12px 20px;
+    margin: 0px 0 0 20px;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 500;
+    border-radius: 5px;
+    border: 1px solid #BDCEF1;
+    background: #6E32C9;
+    color: #fff;
+    cursor: pointer;
+}
+
+#storeslots_dashboard  .storeslots_form_group .label_btn .label_btn_upload:hover{
+    border: 1px solid #6E32C9;
+    background: transparent;
+    color: #6E32C9;
+    cursor: pointer;
+}
+
+#storeslots_dashboard  .storeslots_form_group .preview_image{
+    margin-left: 50px;
+}
+
+#storeslots_dashboard  .storeslots_form_group .preview_image img{
+    height: 60px;
+}
+
+#storeslots_dashboard #tab_body_form .storeslots_form_group .storeslots_text_control {
+    width: 50%;
+}
+
+#storeslots_dashboard .storeslots-hints{
+    font-size: 13px;
+}
+
+#storeslots_dashboard #tab_body_form .storeslots_form_group .storeslots_select_control {
+    width: 50% !important;
+    max-width: 50%;
+    color:#5b5b5bf5 !important;
+    font-size: 15px !important;
+}
+#storeslots_dashboard #tab_body_form .storeslots_form_group .storeslots_select_control option {
+    margin-top: 20px;
+}
+
+#storeslots_dashboard #tab_body_form .storeslots_form_group .storefusion_coupon_checkbox {
+    margin-top: 20px;
+}
+#storeslots_dashboard #tab_body_form .storeslots_form_group .storefusion_coupon_checkbox .description{
+    font-size: 14px;
+    line-height: 25px;
+}
+#storeslots_dashboard #tab_body_form .storeslots_form_group .storeslots_select_control {
+    margin-top: 15px;
+}
+#storeslots_dashboard #tab_body_form .storeslots_form_group{
+    margin-top: 38px;
+}
+#storeslots_dashboard .coupon_generate_top_form {
+    background-color: #ffff;
+    padding: 30px 2px;
+    padding-bottom: 60px;
+    border-radius: 20px;
+}
+#storeslots_dashboard input[type=radio]:checked {
+    border: 1px solid #316BFF;
+}
+#storeslots_dashboard .storeslots_form_group input[type=radio]:checked::before {
+    width: 10px;
+    height: 10px;
+    top: 50%;
+    right: 50%;
+    transform: translate(19%,19%);
+    margin: 0;
+    line-height: 0;
+    background-color: #316BFF;
+}
+#storeslots_dashboard .select2-container {
+    display: block;
+}
+
+#storeslots_dashboard .select2-container .select2-selection--single{
+    height: 55px;
+}
+#storeslots_dashboard .select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 50px;
+}
+#storeslots_dashboard .select2-container--default .select2-selection--single .select2-selection__arrow {
+    top:13px;
+}
+#storeslots_dashboard .select2-container--default .select2-selection--single,
+#storeslots_dashboard .select2-container--open .select2-dropdown {
+    border: 1px solid #BDCEF1;
+    border-radius: 5px;
+}
+#storeslots_dashboard .select2-container--default .select2-selection--single .select2-selection__arrow b:after {
+    position: relative;
+    content: "\f347";
+    font-family: "dashicons";
+    top: -11px;
+    left: -5px;
+    display: inline-block;
+    transition: all .3s;
+    color: #d3d0d0;
+    font-weight: 200;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+#storeslots_dashboard .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b:after{
+    transform: rotate(180deg);
+    left: -5px;
+    transition: all .3s;
+}
+#storeslots_dashboard .select2-container--default .select2-selection--single .select2-selection__arrow b{
+    border-color: inherit;
+    border-style: inherit;
+    border-width: inherit;
+    height: 0;
+    left: inherit;
+    margin-left: inherit;
+    margin-top: inherit;
+    position: inherit;
+    top: inherit;
+    width: inherit;
+}
+#storeslots_dashboard .storeslots_bottom_form .storefusion-fcss-btn-disabled,
+#storeslots_dashboard .storeslots_bottom_form .storefusion-fcss-btn-disabled:hover {
+    background-color: #ccc;
+    border-color: #ddd;
+    color: #fff;
+    cursor: not-allowed;
+}
+
+.storeslots_left_content {
+    width: 20%;
+}
+.storeslots_right_content {
+    width: 80%;
+    background-color: #fff;
+    padding: 50px 60px;
+}
+.storeslots_data_tabs .tab_item{
+    padding: 10px 40px;
+    cursor: pointer;
+    border-bottom: 1px solid #DDD8EE;
+    border-left: 4px solid transparent;
+    transition: .3s;
+}
+.storeslots_data_tabs {
+    border-top: 1px solid #ccc;
+}
+.storeslots_data_tabs .tab_item.tab_item_active{
+    background-color: #FFFF;
+    border-left: 4px solid #6E32C9;
+    transition: .3s;
+}
+.storeslots_data_tabs .tab_item h3{
+    color: #050505;
+    font-weight: 600;
+    font-size: 18px;
+}
+.storeslots_data_tabs .tab_item.tab_item_active h3{
+    color: #6E32C9;
+}
+button.storeslots-btn{
+    text-decoration: none;
+    background-color: #6E32C9;
+    padding: 17px 30px;
+    color: #FFFFFF;
+    border-radius: 5px;
+    font-size: 20px;
+    transition: 0.3s;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+button.storeslots-btn:hover{
+    border: 1px solid #6E32C9;
+    background: transparent;
+    color: #6E32C9;
+    cursor: pointer;
+}
+.storeslots-btn {
+    text-align: right;
+    margin-top: 30px;
+}
+.storeslots_form_group input[type=color] {
+    border: inherit;
+    margin: 0px;
+    height: 40px;
+    width: 70px;
+    box-shadow: inherit;
+    border-radius: inherit;
+    background-color: inherit;
+    color: inherit;
+    padding: 0px;
+    cursor: pointer;
+}
+.storeslots_form_group input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+.storeslots_form_group input[type="color"]::-webkit-color-swatch {
+    border-color: transparent;
+    border-radius: 0px;
+}
+
+#storeslots_dashboard .storeslots_form_group{
+    margin-top: 30px;
+    display: flex;
+    align-items: baseline;
+}
+#storeslots_dashboard .storeslots_form_group label{
+    color: #191D23;
+    padding: 0px 15px;
+    font-size: 16px;
+}
+
+.storeslots_form_group  .label_title {
+    width: 25%;
+}
+
+.storeslots_form_group  .label_title h4 {
+    font-size: 16px;
+}
+
+.label_content.content_border {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+#storeslots_dashboard .storeslots_form_group .select2-container {
+    /*width: 60% !important;*/
+}
+#storeslots_dashboard div.label_content {
+    width: 75%;
+}
+
+.storeslots_item.color-piker label {
+    font-size: 16px;
+    display: block;
+}
+.top-space{
+    margin-top: 100px;
+}
+
+#storeslots_dashboard div.label_content input[type="text"],#storeslots_dashboard div.label_content input[type="number"],#storeslots_dashboard div.label_content input[type="time"]{
+    padding: 12px 20px;
+    /*margin-top: 20px;*/
+    border-radius: 8px;
+    border: 1px solid #BDCEF1;
+    color: #5b5b5bf5 !important;
+    font-size: 15px !important;
+    width: 42%;
+}
+
+#storeslots_dashboard div.label_content .ss_slot_text_control input[type="number"]{ 
+     width: 21% !important;
+}
+
+#storeslots_dashboard div.label_content .storefusion-textarea{
+    padding: 12px 20px;
+    border-radius: 8px;
+    width: 100%;
+    border: 1px solid #BDCEF1;
+    color: #5b5b5bf5 !important;
+    font-size: 15px !important;
+}
+
+#storeslots_dashboard span.wp-color-result-text {
+    display: none;
+}
+.wp-core-ui #storeslots_dashboard button.button{
+    display: inline-block;
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 2.15384615;
+    min-height: 35px;
+    margin: 0 15px 0 0;
+    padding: 0px 0px;
+    cursor: pointer;
+    border-width: 1px;
+    border-style: solid;
+    -webkit-appearance: none;
+    border-radius: 5px;
+    white-space: nowrap;
+    box-sizing: border-box;
+    width: 100px;
+}
+#storeslots_dashboard .storeslots_item {
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: inherit;
+    width: 100%;
+}
+
+#storeslots_dashboard .storeslots_list_items {
+    padding: 0;
+    margin: 0px 0 0 0;
+    background: transparent;
+    display: flex;
+    column-gap: 0px;
+    row-gap: 5px;
+    flex-wrap: wrap;
+}
+
+#storeslots_dashboard .storeslots_list_items .storeslots_item label.toggle_switch {
+    width: 23px;
+}
+
+#storeslots_dashboard .storeslots_form_group label.cart-icon {
+    padding: 0px;
+}
+#storeslots_dashboard div.label_content.color-piker {
+    width: 40%;
+}
+#storeslots_dashboard div.label_content.color-piker .storeslots_list_items .storeslots_item>label {
+    padding: 0px;
+}
+
+
+/* On click Checkout css */
+
+#storeslots_dashboard .hide_wfocc_input{
+      display: none;
+}
+#storeslots_dashboard .hide_wfocc_input_two{
+      display: none;
+}
+
+
+button.storeslots-btn{
+    text-decoration: none;
+    background-color: #6E32C9;
+    padding: 17px 30px;
+    color: #FFFFFF;
+    border-radius: 5px;
+    font-size: 20px;
+    transition: 0.3s;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+button.storeslots-btn:hover{
+    border: 1px solid #6E32C9;
+    background: transparent;
+    color: #6E32C9;
+    cursor: pointer;
+}
+.storeslots-btn {
+    text-align: right;
+    margin-top: 30px;
+}
+
+#storeslots_dashboard .storeslots_bottom_form .storeslots-btn-disabled,
+#storeslots_dashboard .storeslots_bottom_form .storeslots-btn-disabled:hover {
+    background-color: #ccc;
+    border-color: #ddd;
+    color: #fff;
+    cursor: not-allowed;
+}
+
+#storeslots_dashboard .storeslots_footer {
+    text-align: right;
+}
+
+
+/* start color picker */
+.storeslots-settings-form .color-piker .storeslots_list_items .storeslots_item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.storeslots-settings-form span.wp-picker-input-wrap label input[type=text] {
+    width: 35% !important;
+    margin: 0px !important;
+    padding: 0px 10px!important;
+    border-radius: 0px !important;
+}
+
+.storeslots-settings-form .wp-picker-container.wp-picker-active {
+    display: inline-block;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.storeslots-settings-form .wp-picker-holder {
+    position: absolute;
+    top: 40px;
+    z-index: 999;
+}
+
+#storeslots_dashboard div.label_content.color-piker {
+    width: 40%;
+}
+
+#storeslots_dashboard div.label_content.color-piker .storeslots_list_items .storeslots_item>label {
+    padding: 0px;
+}
+
+#storeslots_dashboard .select2.select2-container.select2-container--default{
+    width:  42% !important;
+}
+
+input.storeslots-admin-order-delivery-dates,
+input.storeslots-admin-order-pickup-dates {
+    width: 100%;
+    margin-top: 15px;
+    padding: 5px 15px;
+    background: #fff;
+}
+
+.storeslot-wrapper .storeslots-admin-ordertype-selection-box {
+    padding: 5px 15px;
+    margin-top: 15px;
+}
+
+#storeslots_admin_delivery_date_time .select2-container,
+#storeslots_admin_pickup_date_time .select2-container {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#storeslots_admin_delivery_date_time .select2-container .select2-selection--single,
+#storeslots_admin_pickup_date_time .select2-container .select2-selection--single {
+    height: 40px !important;
+}
+
+#storeslots_admin_delivery_date_time .select2-container .select2-selection--single .select2-selection__rendered, 
+#storeslots_admin_pickup_date_time .select2-container .select2-selection--single .select2-selection__rendered {
+    line-height: 40px !important;
+}
+
+.storeslots_get_pro {
+    color: #FF521D;
+    font-size: 16px;
+    font-weight: 500;
+}
