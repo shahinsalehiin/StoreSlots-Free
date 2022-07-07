@@ -21,23 +21,46 @@ if (!class_exists('StoreSlotsAdmin')) {
         public function __construct()
         {
             $this->utils = new StoreSlotsUtils();
+            add_action( 'admin_init', array($this, 'storeslots_free_plugin_activation') );
 
-            add_action("admin_menu", array($this, 'store_slots_admin_menu'));
-            add_action('admin_enqueue_scripts', array($this, 'store_slots_admin_enqueue'));
-            add_action('plugin_action_links_' . STORESLOTS_BASE_PATH, array($this, 'store_slots_action_links'));
-            $this->db = new StoreSlotsDB($this);
-            new StoreSlotsAdminAjax($this);
+            if (in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+                
+                add_action("admin_menu", array($this, 'store_slots_admin_menu'));
+                add_action('admin_enqueue_scripts', array($this, 'store_slots_admin_enqueue'));
+                add_action('plugin_action_links_' . STORESLOTS_BASE_PATH, array($this, 'store_slots_action_links'));
+                $this->db = new StoreSlotsDB($this);
+                new StoreSlotsAdminAjax($this);
 
-            $this->storeslot_settings = get_option('storeslot_settings', false);
-            $this->delivery_dates     = get_option('storeslot_delivery_dates', false);
-            $this->pickup_dates       = get_option('storeslot_pickup_dates', false);
-            $this->delivery_times     = get_option('storeslots_delivery_times', false);
-            $this->pickup_times       = get_option('storeslots_pickup_times', false);
+                $this->storeslot_settings = get_option('storeslot_settings', false);
+                $this->delivery_dates     = get_option('storeslot_delivery_dates', false);
+                $this->pickup_dates       = get_option('storeslot_pickup_dates', false);
+                $this->delivery_times     = get_option('storeslots_delivery_times', false);
+                $this->pickup_times       = get_option('storeslots_pickup_times', false);
 
-            add_action('add_meta_boxes', [$this, 'storeslots_order_meta_boxes']);
-            add_action('save_post', [$this, 'storeslots_save_order_meta_boxes'], 10, 2);
+                add_action('add_meta_boxes', [$this, 'storeslots_order_meta_boxes']);
+                add_action('save_post', [$this, 'storeslots_save_order_meta_boxes'], 10, 2);    
+            }
+            
+
+            
         }
 
+        public function storeslots_free_plugin_activation() {
+            if ( is_admin() && current_user_can( 'activate_plugins' ) &&  !is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
+                add_action( 'admin_notices', array( $this, 'storeslots_free_woo_plugin_notice') );
+            }
+        }
+
+        public function storeslots_free_woo_plugin_notice(){
+            $main_plugin  = __( 'StoreSlots-Free', 'store-slots' );
+            $lite_plugin = __( 'WooCommerce', 'store-slots' );
+
+            echo '<div class="notice notice-error is-dismissible"><p>' . sprintf( esc_html__( '%1$s requires %2$s to be installed and activated to function properly. %3$s', 'store-slots' ),
+                    '<strong>' . esc_html( $main_plugin ). '</strong>',
+                    '<strong>' . esc_html( $lite_plugin ) . '</strong>',
+                    '<a href="' . esc_url( admin_url( 'plugin-install.php?s=WooCommerce&tab=search&type=term' ) ) . '">' . __( 'Please click on this link and install WooCommerce from WordPress.', 'store-slots' ) . '</a>' )
+                . '</p></div>';
+        }
 
         public function store_slots_action_links($links)
         {
