@@ -21,10 +21,8 @@ if (!class_exists('StoreSlotsAdmin')) {
         public function __construct()
         {
             $this->utils = new StoreSlotsUtils();
-            add_action( 'admin_init', array($this, 'storeslots_free_plugin_activation') );
 
             if (in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-                
                 add_action("admin_menu", array($this, 'store_slots_admin_menu'));
                 add_action('admin_enqueue_scripts', array($this, 'store_slots_admin_enqueue'));
                 add_action('plugin_action_links_' . STORESLOTS_BASE_PATH, array($this, 'store_slots_action_links'));
@@ -39,6 +37,8 @@ if (!class_exists('StoreSlotsAdmin')) {
 
                 add_action('add_meta_boxes', [$this, 'storeslots_order_meta_boxes']);
                 add_action('save_post', [$this, 'storeslots_save_order_meta_boxes'], 10, 2);    
+            }else{
+                add_action( 'admin_init', array($this, 'storeslots_free_plugin_activation') );
             }
             
 
