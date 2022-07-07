@@ -18,14 +18,6 @@ if ( ! defined( 'WPINC' ) ) {
     die;
 }
 
-// check woocommerce exits & active
-if ( !in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-    $error = sprintf (esc_html__ ('storeSlots requires %1$sWooCommerce%2$s to be installed & activated!', 'store-slots'), '<a href=" ' . home_url () . '/wp-admin/plugin-install.php?s=WooCommerce&tab=search&type=term">', '</a>');
-    $message = '<div class="error"><p>' . $error . '</p></div>';
-    echo $message;
-    return;
-}
-
 define(  'STORESLOTS_VERSION', '1.0.1' );
 defined( 'STORESLOTS_PATH' ) or define( 'STORESLOTS_PATH', plugin_dir_path( __FILE__ ) );
 defined( 'STORESLOTS_URL' ) or define( 'STORESLOTS_URL', plugin_dir_url( __FILE__ ) );
@@ -35,13 +27,22 @@ defined( 'STORESLOTS_IMG_DIR' ) or define( 'STORESLOTS_IMG_DIR', plugin_dir_url(
 defined( 'STORESLOTS_CSS_DIR' ) or define( 'STORESLOTS_CSS_DIR', plugin_dir_url( __FILE__ ) . 'assets/css/' );
 defined( 'STORESLOTS_JS_DIR' ) or define( 'STORESLOTS_JS_DIR', plugin_dir_url( __FILE__ ) . 'assets/js/' );
 
-require_once STORESLOTS_PATH . 'includes/StoreSlotsUtils.php';
-require_once STORESLOTS_PATH . 'includes/StoreSlotsDB.php';
-require_once STORESLOTS_PATH . 'backend/class-store-slots-ajax.php';
-require_once STORESLOTS_PATH . 'backend/class-store-slots-admin.php';
 
-// check active wc
-if (in_array('woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) )) ) {
-    require_once STORESLOTS_PATH . 'frontend/class-storeslots-frontend-ajax.php';
-    require_once STORESLOTS_PATH . 'frontend/class-storeslots-frontend.php';
-} 
+
+function store_slots_check_premium_activation() {
+    if ( !in_array( 'StoreSlots-Pro/store-slots-pro.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+
+        require_once STORESLOTS_PATH . 'includes/StoreSlotsUtils.php';
+        require_once STORESLOTS_PATH . 'includes/StoreSlotsDB.php';
+        require_once STORESLOTS_PATH . 'backend/class-store-slots-ajax.php';
+        require_once STORESLOTS_PATH . 'backend/class-store-slots-admin.php';
+        require_once STORESLOTS_PATH . 'frontend/class-storeslots-frontend-ajax.php';
+        require_once STORESLOTS_PATH . 'frontend/class-storeslots-frontend.php';
+
+    }
+
+}
+add_action( 'storeslots_pro_check_init', 'store_slots_check_premium_activation', 10, 2 );
+do_action( 'storeslots_pro_check_init');
+
+ 
