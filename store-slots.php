@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name:       StoreSlots-Free
- * Plugin URI:        https://storeslots.com
+ * Plugin URI:        https://wpcommerz.com/store-slots/
  * Description:       StoreSlots is one of the top wp plugin for delivery products on schedule.
  * Version:           1.0.1
- * Author:            StoreSlots
- * Author URI:        https://storeslots.com/author.html
+ * Author:            WPCommerz
+ * Author URI:        https://wpcommerz.com/store-slots/author.html
  * License:           GPL-2.0+
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       store-slots
